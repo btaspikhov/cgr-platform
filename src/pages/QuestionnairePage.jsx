@@ -32,28 +32,7 @@ export default function QuestionnairePage() {
 
   return (
     <Box sx={{ bgcolor: '#F8FAFF', minHeight: '100vh' }}>
-      <AppBar position="sticky" elevation={0}
-        sx={{ bgcolor: 'white', borderBottom: '1px solid #E2E8F0' }}>
-        <Toolbar>
-          <Button startIcon={<ArrowBack />} color="inherit"
-            onClick={() => navigate('/')} sx={{ mr: 2, color: 'text.secondary' }}>
-            Выход
-          </Button>
-          <Box sx={{ flex: 1 }}>
-            <Typography variant="subtitle1" fontWeight={700} color="text.primary">
-              Блок 2: Совет директоров
-            </Typography>
-            <Typography variant="caption" color="text.secondary">
-              Кодекс КУ РК · Период: 2024
-            </Typography>
-          </Box>
-          <Chip label={`${answered} / ${questions.length}`}
-            color={allAnswered ? 'success' : 'default'} />
-        </Toolbar>
-        <LinearProgress variant="determinate" value={progress}
-          sx={{ height: 3 }} />
-      </AppBar>
-
+      
       <Container maxWidth="md" sx={{ py: 4 }}>
         <Paper sx={{ p: 3, mb: 3, borderRadius: 2, bgcolor: '#EFF6FF',
           border: '1px solid #BFDBFE' }}>
