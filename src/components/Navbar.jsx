@@ -6,23 +6,28 @@ import {
   ListItemButton, ListItemText, Divider
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
+import { useRole } from '../contexts/RoleContext'
 
-const navItems = [
-  { label: 'Самооценка КУ',  path: '/questionnaire', key: 'assessment' },
-  { label: 'Оценка СД',      path: '/questionnaire', key: 'board' },
-  { label: 'Эксперты',       path: '/experts',        key: 'experts' },
-  { label: 'Рейтинг',        path: '/rating',         key: 'rating' },
-  { label: 'Дорожная карта', path: '/roadmap',        key: 'roadmap' },
-  { label: 'Отчёты',         path: '/reports',        key: 'reports' },
+const allNavItems = [
+  { label: 'Профиль компании', path: '/company-profile', key: 'company-profile', roles: ['company'] },
+  { label: 'Самооценка КУ',   path: '/questionnaire',    key: 'assessment',      roles: ['company'] },
+  { label: 'Оценка СД',       path: '/questionnaire',    key: 'board',           roles: ['company'] },
+  { label: 'Эксперты',        path: '/experts',           key: 'experts',         roles: ['company', 'nsku'] },
+  { label: 'Рейтинг',         path: '/rating',            key: 'rating',          roles: ['company', 'nsku', 'public'] },
+  { label: 'Дорожная карта',  path: '/roadmap',           key: 'roadmap',         roles: ['company', 'nsku'] },
+  { label: 'Отчёты',          path: '/reports',           key: 'reports',         roles: ['company', 'nsku'] },
 ]
 
 export default function Navbar() {
   const navigate = useNavigate()
   const location = useLocation()
+  const { role } = useRole()
+
+  const navItems = allNavItems.filter(i => i.roles.includes(role))
 
   const [drawerOpen, setDrawerOpen] = useState(false)
   const [activeKey, setActiveKey] = useState(
-    navItems.find(i => i.path === location.pathname)?.key || 'assessment'
+    allNavItems.find(i => i.path === location.pathname)?.key || 'assessment'
   )
 
   const handleNav = (item) => {
