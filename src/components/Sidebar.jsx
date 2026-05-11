@@ -6,7 +6,7 @@ import { useRole } from '../contexts/RoleContext'
 
 const allNavItems = [
   { path: '/company-profile', roles: ['company'] },
-  { path: '/questionnaire',   roles: ['company'] },
+  { path: '/board-evaluation', roles: ['company'] },
   { path: '/experts',         roles: ['company', 'nsku'] },
   { path: '/rating',          roles: ['company', 'nsku', 'public'] },
   { path: '/roadmap',         roles: ['company', 'nsku'] },

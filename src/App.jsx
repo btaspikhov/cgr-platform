@@ -8,6 +8,7 @@ import ExpertsPage from './pages/ExpertsPage'
 import RoadmapPage from './pages/RoadmapPage'
 import ReportsPage from './pages/ReportsPage'
 import CompanyProfilePage from './pages/CompanyProfilePage'
+import BoardEvaluationPage from './pages/BoardEvaluationPage'
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
 import { RoleProvider } from './contexts/RoleContext'
@@ -30,7 +31,8 @@ function Layout() {
             <Route path="/experts"       element={<ExpertsPage />} />
             <Route path="/roadmap"       element={<RoadmapPage />} />
             <Route path="/reports"       element={<ReportsPage />} />
-            <Route path="/company-profile" element={<CompanyProfilePage />} />
+            <Route path="/company-profile"   element={<CompanyProfilePage />} />
+            <Route path="/board-evaluation"  element={<BoardEvaluationPage />} />
             <Route path="*"              element={<Navigate to="/" />} />
           </Routes>
         </Box>

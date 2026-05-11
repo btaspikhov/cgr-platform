@@ -11,7 +11,7 @@ import { useRole } from '../contexts/RoleContext'
 const allNavItems = [
   { label: 'Профиль компании', path: '/company-profile', key: 'company-profile', roles: ['company'] },
   { label: 'Самооценка КУ',   path: '/questionnaire',    key: 'assessment',      roles: ['company'] },
-  { label: 'Оценка СД',       path: '/questionnaire',    key: 'board',           roles: ['company'] },
+  { label: 'Оценка СД',       path: '/board-evaluation', key: 'board',           roles: ['company'] },
   { label: 'Эксперты',        path: '/experts',           key: 'experts',         roles: ['company', 'nsku'] },
   { label: 'Рейтинг',         path: '/rating',            key: 'rating',          roles: ['company', 'nsku', 'public'] },
   { label: 'Дорожная карта',  path: '/roadmap',           key: 'roadmap',         roles: ['company', 'nsku'] },

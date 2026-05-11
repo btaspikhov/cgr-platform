@@ -5,8 +5,8 @@ import {
   import { CheckCircle, Cancel } from '@mui/icons-material'
   
   export default function QuestionCard({ question, answer, onChange }) {
-    const { id, code, text, hint } = question
-  
+    const { id, text, hint } = question
+
     return (
       <Card sx={{
         mb: 2, borderRadius: 2,
@@ -18,9 +18,8 @@ import {
       }}>
         <CardContent sx={{ p: 3 }}>
           <Box sx={{ display: 'flex', gap: 1.5, mb: 1.5 }}>
-            <Chip label={code} size="small" variant="outlined"
-              color="primary" sx={{ fontFamily: 'monospace' }} />
-            <Chip label={`№ ${id}`} size="small" variant="outlined" />
+            <Chip label={id} size="small"
+              sx={{ fontFamily: 'monospace', bgcolor: '#D9F99D', color: '#3F6212', fontWeight: 700, border: 'none' }} />
           </Box>
   
           <Typography variant="body1" fontWeight={500} mb={1}>
